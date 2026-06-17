@@ -1,8 +1,11 @@
-# Weather ETL Pipeline — Airflow + PostgreSQL
+<div align="center">
+
+<h1> <p>Weather ETL Pipeline — Airflow + PostgreSQL</p> </h1>
+</div>
+
 
 An end-to-end ETL pipeline that pulls current weather readings from the [Open-Meteo API](https://open-meteo.com/) on a daily schedule and stores them in a PostgreSQL database. Built with Apache Airflow (Astro Runtime) and containerized with Docker Compose.
 
----
 
 ## Table of Contents
 
@@ -15,7 +18,6 @@ An end-to-end ETL pipeline that pulls current weather readings from the [Open-Me
 - [Configuration](#configuration)
 - [License](#license)
 
----
 
 ## Architecture
 
@@ -34,7 +36,6 @@ Open-Meteo API
 
 The pipeline runs as a single Airflow DAG (`weather_etl_pipeline`) on a `@daily` schedule. Each stage is an isolated TaskFlow task, keeping concerns separated and making individual stages easy to test or retry.
 
----
 
 ## Features
 
@@ -44,7 +45,6 @@ The pipeline runs as a single Airflow DAG (`weather_etl_pipeline`) on a `@daily`
 - Airflow Connections for both the API and the database, keeping credentials out of source code.
 - Fully containerized: Airflow runs via the Astro CLI; PostgreSQL is defined in Docker Compose.
 
----
 
 ## Project Structure
 
@@ -61,14 +61,12 @@ The pipeline runs as a single Airflow DAG (`weather_etl_pipeline`) on a `@daily`
 └── README.md
 ```
 
----
 
 ## Prerequisites
 
 - [Astro CLI](https://www.astronomer.io/docs/astro/cli/install-cli) installed
 - Docker Desktop (or Docker Engine + Docker Compose) running
 
----
 
 ## Setup
 
@@ -97,7 +95,6 @@ The pipeline runs as a single Airflow DAG (`weather_etl_pipeline`) on a `@daily`
 
 3. Open the Airflow UI at [http://localhost:8080](http://localhost:8080) (default credentials: `admin` / `admin`).
 
----
 
 ## Usage
 
@@ -110,8 +107,6 @@ The pipeline runs as a single Airflow DAG (`weather_etl_pipeline`) on a `@daily`
 
 To change the target location, update `LATITUDE` and `LONGITUDE` at the top of [dags/etl_data.py](dags/etl_data.py).
 
----
-
 ## Configuration
 
 Airflow Connections are pre-configured in `airflow_settings.yaml` for local development:
@@ -123,7 +118,6 @@ Airflow Connections are pre-configured in `airflow_settings.yaml` for local deve
 
 For production deployments, configure these connections through the Airflow UI or environment variables — do not rely on `airflow_settings.yaml`, which is for local development only.
 
----
 
 ## License
 
