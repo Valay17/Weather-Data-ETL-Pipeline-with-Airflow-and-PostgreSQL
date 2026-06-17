@@ -121,4 +121,5 @@ For production deployments, configure these connections through the Airflow UI o
 
 ## License
 
-Free to use and modify for personal or internal purposes. Redistribution or public distribution of modified versions requires explicit permission from the author.
+You are free to use and modify this software for personal or internal purposes.
+However, redistribution or public distribution of this software or any modified versions is not permitted without explicit permission.
