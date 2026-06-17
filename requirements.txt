@@ -1,0 +1,5 @@
+# Python dependencies — installed on top of the Astro Runtime base image.
+# Pre-installed provider packages: https://www.astronomer.io/docs/astro/runtime-image-architecture#provider-packages
+
+apache-airflow-providers-http
+apache-airflow-providers-postgres

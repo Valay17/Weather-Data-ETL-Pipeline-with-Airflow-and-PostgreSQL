@@ -1,0 +1,32 @@
+# Local Airflow settings — Connections, Pools, and Variables for development only.
+# This file is read by the Astro CLI and is NOT deployed to production.
+# Docs: https://www.astronomer.io/docs/astro/cli/develop-project#configure-airflow_settingsyaml-local-development-only
+
+airflow:
+  connections:
+    # HTTP connection used by the extract task to reach the Open-Meteo forecast API
+    - conn_id: open_meteo_api
+      conn_type: http
+      conn_host: https://api.open-meteo.com
+      conn_schema: ""
+      conn_login: ""
+      conn_password: ""
+      conn_port: ""
+      conn_extra: {}
+
+    # PostgreSQL connection used by the load task to persist weather records
+    - conn_id: postgres
+      conn_type: postgres
+      conn_host: postgres      # matches the docker-compose service name
+      conn_schema: postgres
+      conn_login: postgres
+      conn_password: postgres
+      conn_port: 5432
+      conn_extra: {}
+
+  pools:
+    - pool_name: default_pool
+      pool_slot: 128
+      pool_description: Default worker pool
+
+  variables: []
